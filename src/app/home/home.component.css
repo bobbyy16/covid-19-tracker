@@ -1,0 +1,15 @@
+tbody>tr:hover{
+    background-color:dimgray;
+}
+
+thead>tr{
+    background-color: darkgray;
+}
+
+.green{
+    color: green;
+}
+
+.red{
+    color:red;
+}

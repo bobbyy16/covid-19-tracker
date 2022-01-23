@@ -1,0 +1,67 @@
+<br>
+<br>
+<br>
+<br>
+
+<div class="container" *ngIf="responsedata">
+    <form>
+        <div class="form-group">
+          <label for="exampleFormControlSelect1">State</label>
+          <select class="form-control" id="exampleFormControlSelect1" (click)="changeCountry($event.target.value)">
+            <option *ngFor ="let nameofstate of districtwisedata">{{nameofstate.state}}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">District</label>
+            <select class="form-control" id="exampleFormControlSelect1" (click)="dataprinting($event.target.value)">
+              <option *ngFor ="let districtname of district">{{districtname.id}}</option>
+            </select>
+          </div>
+      </form>
+
+      <br>
+      <br>
+
+      <table class="table table-hover" *ngIf="districtcasesdata!=null">
+        <thead>
+          <tr>
+            <th>State</th>
+            <th>Confirmed</th>
+            <th>Active</th>
+            <th>Recoverd</th>
+            <th>Deaths</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th>{{statedata.name}}</th>
+            <th>{{statedata.confirmed}}</th>
+            <th>{{statedata.active}}</th>
+            <th style="color: green;">{{statedata.recovered}}</th>
+            <th style="color: red;">{{statedata.deaths}}</th>
+          </tr>
+        </tbody>
+      </table>
+      <br>
+      <table class="table table-hover" *ngIf="districtcasesdata">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>District</th>
+            <th>Confirmed</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+            <th>{{districtcasesdata.name}}</th>
+            <th>{{districtcasesdata.confirmed}}</th>
+          </tr>
+        </tbody>
+      </table>
+</div>

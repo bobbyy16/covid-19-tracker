@@ -1,0 +1,29 @@
+<div class="container">
+    <br>
+    <br>
+    <br>
+    <br>
+      <div class="well">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>State</th>
+              <th>No Of Cases</th>
+              <th>Active</th>
+              <th>Deaths</th>
+              <th>Recovered</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let obj of data">
+              <td>{{obj.state}}</td>
+              <td>{{obj.noOfCases}}</td>
+              <td>{{obj.noOfCases - obj.deaths - obj.cured}}</td>
+              <td class="red">{{obj.deaths}}</td>
+              <td class="green">{{obj.cured}}</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+    
